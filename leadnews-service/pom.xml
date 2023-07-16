@@ -12,7 +12,8 @@
     <artifactId>leadnews-service</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>leadernews-user</module>
+        <module>leadnews-user</module>
+        <module>leadnews-article</module>
     </modules>
 
     <properties>
