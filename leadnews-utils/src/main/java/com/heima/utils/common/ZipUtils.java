@@ -1,5 +1,7 @@
 package com.heima.utils.common;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -9,8 +11,11 @@ import java.util.zip.*;
 /**
  * 字符串压缩
  */
+
+@Slf4j
 public class ZipUtils {
 
+    private ZipUtils() {}
 
     /**
      * 使用gzip进行压缩
@@ -30,14 +35,6 @@ public class ZipUtils {
             gzip.write(primStr.getBytes());
         } catch (IOException e) {
             e.printStackTrace();
-        } finally {
-            if (gzip != null) {
-                try {
-                    gzip.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
         }
         return new sun.misc.BASE64Encoder().encode(out.toByteArray());
     }
@@ -76,25 +73,6 @@ public class ZipUtils {
             decompressed = out.toString();
         } catch (IOException e) {
             e.printStackTrace();
-        } finally {
-            if (ginzip != null) {
-                try {
-                    ginzip.close();
-                } catch (IOException e) {
-                }
-            }
-            if (in != null) {
-                try {
-                    in.close();
-                } catch (IOException e) {
-                }
-            }
-            if (out != null) {
-                try {
-                    out.close();
-                } catch (IOException e) {
-                }
-            }
         }
 
 
@@ -124,20 +102,7 @@ public class ZipUtils {
             compressed = out.toByteArray();
             compressedStr = new sun.misc.BASE64Encoder().encodeBuffer(compressed);
         } catch (IOException e) {
-            compressed = null;
-        } finally {
-            if (zout != null) {
-                try {
-                    zout.close();
-                } catch (IOException e) {
-                }
-            }
-            if (out != null) {
-                try {
-                    out.close();
-                } catch (IOException e) {
-                }
-            }
+            log.error(e.getMessage());
         }
         return compressedStr;
     }
@@ -173,25 +138,6 @@ public class ZipUtils {
             decompressed = out.toString();
         } catch (IOException e) {
             decompressed = null;
-        } finally {
-            if (zin != null) {
-                try {
-                    zin.close();
-                } catch (IOException e) {
-                }
-            }
-            if (in != null) {
-                try {
-                    in.close();
-                } catch (IOException e) {
-                }
-            }
-            if (out != null) {
-                try {
-                    out.close();
-                } catch (IOException e) {
-                }
-            }
         }
         return decompressed;
     }

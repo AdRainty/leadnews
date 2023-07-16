@@ -1,0 +1,14 @@
+server:
+  port: 51801
+spring:
+  application:
+    name: leadnews-user
+  cloud:
+    nacos:
+      discovery:
+        namespace: f86205ee-37e1-4141-9c57-624d5f4377ed
+        server-addr: 192.168.18.100:8848
+      config:
+        server-addr: 192.168.18.100:8848
+        file-extension: yml
+        namespace: f86205ee-37e1-4141-9c57-624d5f4377ed

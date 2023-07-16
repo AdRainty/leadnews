@@ -1,4 +1,4 @@
-package com.heima.utils.common;
+package com.heima.app.gateway.util;
 
 import io.jsonwebtoken.*;
 import lombok.extern.slf4j.Slf4j;
