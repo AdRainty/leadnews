@@ -1,44 +1,26 @@
 package com.heima.model.common.dtos;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+
 import java.io.Serializable;
 
+@Data
+@EqualsAndHashCode(callSuper = true)
+@NoArgsConstructor
+@AllArgsConstructor
 public class PageResponseResult extends ResponseResult implements Serializable {
-    private Integer currentPage;
-    private Integer size;
-    private Integer total;
+    private Long currentPage;
+    private Long size;
+    private Long total;
 
-    public PageResponseResult(Integer currentPage, Integer size, Integer total) {
-        this.currentPage = currentPage;
-        this.size = size;
-        this.total = total;
-    }
-
-    public PageResponseResult() {
-
-    }
-
-
-    public int getCurrentPage() {
-        return currentPage;
-    }
-
-    public void setCurrentPage(int currentPage) {
-        this.currentPage = currentPage;
-    }
-
-    public int getSize() {
-        return size;
-    }
-
-    public void setSize(int size) {
-        this.size = size;
-    }
-
-    public int getTotal() {
-        return total;
-    }
-
-    public void setTotal(int total) {
-        this.total = total;
+    public PageResponseResult(IPage page) {
+        this.currentPage = page.getCurrent();
+        this.size = page.getSize();
+        this.total = page.getTotal();
+        this.setData(page.getRecords());
     }
 }
