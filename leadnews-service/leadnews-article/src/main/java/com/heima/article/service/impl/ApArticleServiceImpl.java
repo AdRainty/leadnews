@@ -6,7 +6,7 @@ import com.heima.article.service.ApArticleService;
 import com.heima.model.article.dtos.ArticleHomeDto;
 import com.heima.model.article.pojos.ApArticle;
 import com.heima.model.common.dtos.ResponseResult;
-import com.heima.model.common.enums.LoadDataEnum;
+import com.heima.model.article.enums.LoadDataEnum;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

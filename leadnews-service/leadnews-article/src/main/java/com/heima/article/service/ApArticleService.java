@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.heima.model.article.dtos.ArticleHomeDto;
 import com.heima.model.article.pojos.ApArticle;
 import com.heima.model.common.dtos.ResponseResult;
-import com.heima.model.common.enums.LoadDataEnum;
+import com.heima.model.article.enums.LoadDataEnum;
 
 /**
  * @author AdRainty

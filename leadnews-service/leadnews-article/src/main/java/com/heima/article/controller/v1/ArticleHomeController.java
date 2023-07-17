@@ -3,7 +3,7 @@ package com.heima.article.controller.v1;
 import com.heima.article.service.ApArticleService;
 import com.heima.model.article.dtos.ArticleHomeDto;
 import com.heima.model.common.dtos.ResponseResult;
-import com.heima.model.common.enums.LoadDataEnum;
+import com.heima.model.article.enums.LoadDataEnum;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;

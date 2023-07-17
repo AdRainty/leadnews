@@ -1,4 +1,4 @@
-package com.heima.model.common.enums;
+package com.heima.model.article.enums;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
