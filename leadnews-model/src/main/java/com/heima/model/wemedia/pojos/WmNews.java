@@ -53,7 +53,7 @@ public class WmNews implements Serializable {
      3 多图文章
      */
     @TableField("type")
-    private Short type;
+    private Integer type;
 
     /**
      * 图文频道ID
